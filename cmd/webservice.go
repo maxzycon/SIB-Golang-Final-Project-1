@@ -54,7 +54,7 @@ func InitWebservice(params *InitWebserviceParam) {
 	app.Use(recover.New()) // --- recover panic
 
 	api := app.Group("/api") // /api
-	v1 := api.Group("/v1")
+	v1 := app
 	api.Get("/health", monitor.New())
 
 	// ------- User
